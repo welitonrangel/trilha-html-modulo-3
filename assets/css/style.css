@@ -1,0 +1,295 @@
+/* assets/css/style.css */
+
+*, *::before, *::after { box-sizing: border-box; }
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #000000;
+    --text-color: #E0E0E0;
+    --primary-color: #FFD700;
+    --secondary-color: #00FFFF;
+    --accent-color: #FF4500;
+    --sidebar-bg: #1a1a1a;
+    --footer-bg: #0a0a0a;
+    --content-bg: #111;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Tipografia */
+h1, h2, h3 {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--primary-color);
+    text-shadow: 2px 2px #333;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5em; text-align: center; margin-bottom: 1em; }
+h2 { font-size: 1.8em; border-bottom: 2px solid var(--secondary-color); padding-bottom: 5px; }
+h3 { font-size: 1.3em; }
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Layout Geral */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    max-width: 1200px;
+    width: 95%;
+    margin: 20px auto;
+    background-color: var(--content-bg);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background-color: var(--sidebar-bg);
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+header .logo img {
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 5px var(--primary-color));
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9em;
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+/* Sidebar e Anchors (Laterais) */
+.sidebar, .anchors {
+    flex: 0 0 220px; /* Não cresce, não encolhe, largura de 220px */
+    background-color: var(--sidebar-bg);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sidebar {
+    border-right: 1px solid #333;
+}
+
+.anchors {
+    border-left: 1px solid #333;
+}
+
+.sidebar h2, .anchors h2 {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 8px;
+    text-align: center;
+    text-shadow: none;
+}
+
+.sidebar ul, .anchors ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li, .anchors li {
+    margin-bottom: 10px;
+}
+
+.sidebar a, .anchors a {
+    display: block;
+    padding: 5px 10px;
+    background-color: #222;
+    border-left: 3px solid var(--secondary-color);
+    transition: background-color 0.3s ease, border-left-color 0.3s ease;
+    overflow-wrap: break-word;
+}
+
+.sidebar a:hover, .anchors a:hover {
+    background-color: #333;
+    border-left-color: var(--primary-color);
+}
+
+.anchors nav ul li a.active {
+    background-color: var(--accent-color);
+    color: #fff;
+    border-left-color: var(--primary-color);
+}
+
+/* Main Content */
+main {
+    flex: 1; /* Ocupa todo o espaço restante disponível */
+    padding: 20px 30px;
+    background-color: #0d0d0d;
+    min-width: 0;
+}
+
+main p {
+    margin-bottom: 1em;
+    text-align: justify;
+}
+
+main strong {
+    color: var(--primary-color);
+}
+
+figure {
+    margin: 2em 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+figure:hover img {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(255, 69, 0, 0.8);
+    filter: brightness(1.1);
+}
+
+figcaption {
+    font-size: 0.9em;
+    color: #999;
+    margin-top: 10px;
+}
+
+/* ESTILO PARA A TABELA DE CARROS */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+    font-family: 'Roboto', sans-serif;
+}
+table thead {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8em;
+}
+table th, table td {
+    border: 1px solid #444;
+    padding: 12px;
+    text-align: left;
+}
+table tbody tr:nth-child(odd) {
+    background-color: #1a1a1a;
+}
+table tbody tr:hover {
+    background-color: #2a2a2a;
+    color: var(--primary-color);
+}
+
+/* VÍDEO CENTRALIZADO */
+.video-container {
+    max-width: 350px; 
+    height: auto;
+    margin: 20px auto; /* Centraliza horizontalmente */
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    display: block;
+}
+
+/* ANIMAÇÃO DE FADE-IN PARA AS SEÇÕES */
+main section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+main section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    color: #888;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    border-top: 3px solid var(--accent-color);
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--secondary-color);
+}
+
+/* Responsividade para Telas Pequenas */
+@media (max-width: 900px) {
+    .content {
+        flex-direction: column;
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .sidebar, .anchors {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #333;
+        flex-basis: auto;
+    }
+
+    main {
+        order: -1; 
+    }
+}

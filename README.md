@@ -6,8 +6,6 @@ O objetivo era criar uma página de artigo informativo, aplicando conceitos avan
 O tema escolhido foi o clássico jogo de corrida **Top Gear** para Super Nintendo. 
 A página é uma "single-page application" (SPA) que serve como um tributo informativo e nostálgico ao jogo, com um layout moderno e diversas interatividades.
 
-## 📸 Prévia da Página
-
 ![Prévia da Página de Top Gear](assets/images/cartucho-top-gear.png)
 
 ---
